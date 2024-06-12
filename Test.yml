@@ -12,6 +12,6 @@ spec:
         - mountPath: /var/log/example
     - name: FileBeat container
       volumeMounts: /var/log/example
-    - name: log-housekeeper 
+    - name: 
 
 
