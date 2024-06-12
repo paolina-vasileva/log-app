@@ -10,7 +10,7 @@ spec:
     - name: dummy-log script generator
       volumeMounts:
         - mountPath: /var/log/example
-    - name: FileBeat container
+    - name: 
       volumeMounts: /var/log/example
     - name: log-housekeeper 
 
