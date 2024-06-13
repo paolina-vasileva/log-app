@@ -17,15 +17,15 @@ containers:
       mkdir -p $logdir
       while true;
       do
-        timestamp=$(date +"%Y-%m-%d %H:%M:%S") ;
+        timestamp=$(date +"%Y-%m-%d %H:%M:%S")
         date=$(date +"%Y-%m-%d-%H-00-00")
         uuid=$(uuidgen)
         echo "$timestamp INFO [com.commerzbank.my.logger.LoggerClass] - My dummy log message $uuid"
         echo "$timestamp INFO [com.commerzbank.my.logger.LoggerClass] - My dummy log message $uuid" >> $logdir/dummy-$date.log
         sleep 5
       done      
-     volumeMounts:
-     -name: log-volume
+    volumeMounts:
+    - name: log-volume
       mountPath: /var/log/example
 
 
