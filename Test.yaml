@@ -17,20 +17,20 @@ spec:
       containers:
       - name: dummy-log script container
         image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
-        args:
+        command:
         - /bin/sh
-        - c
-        - >
+        - -c
+        - |
           logdir="/var/log/example"
-          mkdir -p $logdir
-          while true
+          mkdir -p $logdir;
+          while true;
           do
           timestamp=$(date +"%Y-%m-%d %H:%M:%S")
           date=$(date +"%Y-%m-%d-%H-00-00")
           uuid=$(uuidgen)
           echo "$timestamp INFO [com.commerzbank.my.logger.LoggerClass] - My dummy log message $uuid"
           echo "$timestamp INFO [com.commerzbank.my.logger.LoggerClass] - My dummy log message $uuid" >> $logdir/dummy-$date.log
-          sleep 5
+          sleep 5;
           done      
         volumeMounts:
         - mountPath: /var/log/example
