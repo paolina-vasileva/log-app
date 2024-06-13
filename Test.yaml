@@ -6,13 +6,13 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: log-app
   replicas: 1
   template:
     metadata:
       name: log-app
       labels: 
-        app: myapp
+        app: log-app
     spec:
       containers:
       - name: dummy-log script container
