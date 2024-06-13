@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: log-app-deployment
-  labels: log-app
+  labels: 
+    app: log-app
 spec:
   selector:
     matchLabels:
@@ -11,7 +12,8 @@ spec:
   template:
     metadata:
       name: log-app-temp
-      labels: log-app
+      labels: 
+        app: log-app
     spec:
       containers:
       - name: dummy-log script container
