@@ -25,7 +25,8 @@ spec:
         sleep 5
       done      
     volumeMounts:
-    - name: log-volume
-      mountPath: /var/log/example
+    - mountPath: /var/log/example
+      name: log-volume
+      
 
 
