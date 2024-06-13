@@ -11,8 +11,6 @@ spec:
   template:
     metadata:
       name: log-app-temp
-      labels: 
-        app: log-app
     spec:
       containers:
       - name: dummy-log script container
