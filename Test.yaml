@@ -6,7 +6,7 @@ spec:
   volumes:
   - name: log-volume
     emptyDir: {}
-containers:
+  containers:
   - name: dummy-log script container
     image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
     args:
