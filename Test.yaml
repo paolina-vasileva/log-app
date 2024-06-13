@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: dummy-log script container
+  name: log-app
 spec:
   containers:
   - name: dummy-log script container
