@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Pod
+apiVersion: v1
+kind: Deployment
 metadata: 
   name: dummy-log script container
   image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
