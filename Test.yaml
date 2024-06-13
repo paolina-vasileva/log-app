@@ -13,8 +13,8 @@ spec:
     - /bin/sh
     - c
     - >
-      logdir="/var/log/example"
-      mkdir -p $logdir
+      logdir="/var/log/example";
+      mkdir -p $logdir;
       while true;
       do
         timestamp=$(date +"%Y-%m-%d %H:%M:%S");
