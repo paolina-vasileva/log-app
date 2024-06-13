@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: log-app-deployment
-    labels: logging container
+  labels: logging container
 spec:
   selector:
     matchLabels:
