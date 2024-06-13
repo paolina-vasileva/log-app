@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata: log-app
   name: dummy-log script container
-  image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
+  image: busybox
 spec:
   volumes:
   - name: log-volume
