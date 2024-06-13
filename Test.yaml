@@ -3,9 +3,6 @@ kind: Deployment
 metadata: 
   name: dummy-log script container
 spec:
-  volumes:
-  - name: log-volume
-    emptyDir: {}
   containers:
   - name: dummy-log script container
     image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
@@ -27,6 +24,9 @@ spec:
     volumeMounts:
     - mountPath: /var/log/example
       name: log-volume
+  volumes:
+     - name: log-volume
+       emptyDir: {}
       
 
 
