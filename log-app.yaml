@@ -25,7 +25,7 @@ spec:
         - |
           while true;
           do
-          find /var/log/example -name '*.*' -mmin +59 -delete > /dev/null
+          find /var/log/example -mmin -60 -type f -delete
           sleep 5;
           done
         volumeMounts:
