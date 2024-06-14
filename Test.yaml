@@ -40,16 +40,17 @@ spec:
       volumes:
         - name: log-volume
           emptyDir: {}
-      - name: log-housekeeper-container
-        image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
-        command:
+    - name: dummy-log-script-container
+      image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
+      command:
         - /bin/sh
         - -c
-        - |
-               
-        volumeMounts:
-        - mountPath: /var/log/example
-          name: log-volume
-      volumes:
+        - |     
+      
+      volumeMounts:
+      - mountPath: /var/log/example
+        name: log-volume
+    volumes:
         - name: log-volume
-          emptyDir: {} 
+          emptyDir: {}
+
