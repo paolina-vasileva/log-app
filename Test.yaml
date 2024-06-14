@@ -20,7 +20,7 @@ spec:
       - name: log-housekeeper-container
       image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
       command: ["/bin/sh"]
-      args: ["-c", "find /var/log/example -name '*.*' -mmin +60","-delete"]
+      args: ["-c", "find /var/log/example -name '*.*' -mmin +60","-delete > /dev/null"]
       volumeMounts:
       - mountPath: /var/log/example
         name: log-volume
