@@ -17,33 +17,10 @@ spec:
         app: log-app
     spec:
       containers:
-      - name: dummy-log-script-container
-        image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
-        command:
-        - /bin/sh
-        - -c
-        - |
-          logdir="/var/log/example"
-          mkdir -p $logdir;
-          while true;
-          do
-          timestamp=$(date +"%Y-%m-%d %H:%M:%S")
-          date=$(date +"%Y-%m-%d-%H-00-00")
-          uuid=$(uuidgen)
-          echo "$timestamp INFO [com.co.my.logger.LoggerClass] - My dummy log message $uuid"
-          echo "$timestamp INFO [com.co.my.logger.LoggerClass] - My dummy log message $uuid" >> $logdir/dummy-$date.log
-          sleep 5;
-          done      
-        volumeMounts:
-        - mountPath: /var/log/example
-          name: log-volume
-      volumes:
-        - name: log-volume
-          emptyDir: {}
-    - name: dummy-log-script-container
+      - name: log-housekeeper-container
       image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
       command: ["/bin/sh"]
-      args: ["-c", "find /var/log/example -name '*.*' -mmin +240","-delete"]
+      args: ["-c", "find /var/log/example -name '*.*' -mmin +60","-delete"]
       volumeMounts:
       - mountPath: /var/log/example
         name: log-volume
