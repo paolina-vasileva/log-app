@@ -42,11 +42,8 @@ spec:
           emptyDir: {}
     - name: dummy-log-script-container
       image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
-      command:
-        - /bin/sh
-        - -c
-        - |     
-      
+      command: ["/bin/sh"]
+      args: ["-c", "find /var/log/example -name '*.*' -mmin +240","-delete"]
       volumeMounts:
       - mountPath: /var/log/example
         name: log-volume
