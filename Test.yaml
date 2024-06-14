@@ -19,7 +19,7 @@ spec:
       containers:
       - name: log-housekeeper-container
         image: registry.access.redhat.com/ubi8/ubi:8.10-901.1717584420
-        command: /bin/sh
+        command:
         - /bin/sh
         - -c
         - |
