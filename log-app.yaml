@@ -55,7 +55,9 @@ spec:
         image: docker.elastic.co/beats/filebeat:8.14.1
         volumeMounts:
         - mountPath: /var/log/example
-          name: log-volume     
+          name: log-volume
+        - mountPath: /usr/share/filebeat/filebeat.yml    
+          name: filebeat-config       
       volumes:
         - name: filebeat-config
           configMap:
