@@ -58,11 +58,11 @@ spec:
           name: log-volume     
       volumes:
         - name: filebeat-config
-        configMap:
-          name: filebeat-configmap
-          items:
-          - key: filebeat-configmap.yaml
-            path: filebeat-configmap.yaml
+          configMap:
+            name: filebeat-configmap
+            items:
+            - key: filebeat-configmap.yaml
+              path: filebeat-configmap.yaml
         - name: log-volume
           emptyDir: {}
       
