@@ -64,7 +64,7 @@ spec:
             name: filebeat-configmap
             items:
             - key: filebeat.yml
-              path: filebeat.yml
+              path: D:\Training\pods\filebeat.yml
         - name: log-volume
           emptyDir: {}
       
