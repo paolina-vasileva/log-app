@@ -57,12 +57,12 @@ spec:
         - mountPath: /var/log/example
           name: log-volume     
       volumes:
-        - name: log-volume
-          emptyDir: {}
         - name: filebeat-config
         configMap:
           name: filebeat-configmap
           items:
           - key: filebeat-configmap.yaml
             path: filebeat-configmap.yaml
+        - name: log-volume
+          emptyDir: {}
       
