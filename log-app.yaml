@@ -56,7 +56,7 @@ spec:
         volumeMounts:
         - mountPath: /var/log/example
           name: log-volume
-        - mountPath: /usr/share/filebeat/filebeat.yml    
+        - mountPath: D:\Training\pods\filebeat.yml    
           name: filebeat-config       
       volumes:
         - name: filebeat-config
