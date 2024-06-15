@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: filebeat-configmap
+data:
+  filebeat.yml: |
+    filebeat.inputs:
+    - type: filestream 
+      id: my-filestream-id
+      enabled: true
+      paths:
+      - /var/log/example/*.log
+    output.console:
+      pretty: true
+      
